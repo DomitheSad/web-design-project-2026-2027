@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AUEB E-Shop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <header>
+        <h1>AUEB E-Shop</h1>
+    </header>
+
+
+    <main>
+
+        <!-- diaxeirisi proiontwn -->
+
+        <section id="product-management">
+
+            <h2>Διαχείριση Προϊόντων</h2>
+
+            <form id="productForm">
+
+                <!-- Onoma proiontos -->
+
+                <label for="productName">
+                    Όνομα προϊόντος:
+                </label>
+
+                <input
+                    type="text"
+                    id="productName"
+                    name="productName"
+                    required
+                >
+
+
+                <!-- Kathgories -->
+
+                <label for="category">
+                    Κατηγορία:
+                </label>
+
+                <select
+                    id="category"
+                    name="category"
+                    required
+                >
+
+                    <option value="">
+                        Επιλέξτε κατηγορία
+                    </option>
+
+                    <option value="electronics">
+                        Electronics
+                    </option>
+
+                    <option value="books">
+                        Books
+                    </option>
+
+                    <option value="clothing">
+                        Clothing
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <!-- timh -->
+
+                <label for="price">
+                    Τιμή:
+                </label>
+
+                <input
+                    type="number"
+                    id="price"
+                    name="price"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+
+                <!-- diathesimothta -->
+
+                <div class="checkbox-group">
+
+                    <label for="available">
+                        Διαθέσιμο:
+                    </label>
+
+                    <input
+                        type="checkbox"
+                        id="available"
+                        name="available"
+                    >
+
+                </div>
+
+
+                <!-- Ypoboli -->
+
+                <button type="submit">
+                    Προσθήκη προϊόντος
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- Katalogos proiontwn -->
+
+        <section id="product-catalog">
+
+            <h2>Κατάλογος Προϊόντων</h2>
+
+
+            <div class="product-controls">
+
+                <!-- Anazitisi -->
+
+                <div>
+
+                    <label for="search">
+                        Αναζήτηση:
+                    </label>
+
+                    <input
+                        type="search"
+                        id="search"
+                        name="search"
+                        placeholder="Αναζήτηση προϊόντος..."
+                    >
+
+                </div>
+
+
+                <!-- Filter -->
+
+                <div>
+
+                    <label for="categoryFilter">
+                        Φίλτρο κατηγορίας:
+                    </label>
+
+                    <select
+                        id="categoryFilter"
+                        name="categoryFilter"
+                    >
+
+                        <option value="all">
+                            Όλες
+                        </option>
+
+                        <option value="electronics">
+                            Electronics
+                        </option>
+
+                        <option value="books">
+                            Books
+                        </option>
+
+                        <option value="clothing">
+                            Clothing
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pinakas -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th id="sortName">
+                                Όνομα
+                            </th>
+
+                            <th>
+                                Κατηγορία
+                            </th>
+
+                            <th id="sortPrice">
+                                Τιμή
+                            </th>
+
+                            <th>
+                                Διαθεσιμότητα
+                            </th>
+
+                            <th>
+                                Ενέργειες
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="productTableBody">
+
+                        <!--
+                            javascript
+                        -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Mhnuma oti den yparxei proion -->
+
+            <p id="noProductsMessage" hidden>
+                Δεν βρέθηκαν προϊόντα.
+            </p>
+
+        </section>
+
+
+
+        <!-- Eggrafh pelati -->
+
+        <section id="customer-registration">
+
+            <h2>Εγγραφή Πελάτη</h2>
+
+
+            <form id="registerForm">
+
+                <!-- Onoma -->
+
+                <label for="firstName">
+                    Όνομα:
+                </label>
+
+                <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                >
+
+                <span
+                    id="firstNameMessage"
+                    class="validation-message">
+                </span>
+
+
+                <!-- Epwnumo -->
+
+                <label for="lastName">
+                    Επώνυμο:
+                </label>
+
+                <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                >
+
+                <span
+                    id="lastNameMessage"
+                    class="validation-message">
+                </span>
+
+
+                <!-- Email -->
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+                <span
+                    id="emailMessage"
+                    class="validation-message">
+                </span>
+
+
+                <!-- Role -->
+
+                <label for="role">
+                    Ρόλος:
+                </label>
+
+                <select
+                    id="role"
+                    name="role"
+                    required
+                >
+
+                    <option value="">
+                        Επιλέξτε ρόλο
+                    </option>
+
+                    <option value="user">
+                        User
+                    </option>
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
+
+
+                <!-- Hmerominia Eggrafhs -->
+
+                <label for="registerDate">
+                    Ημερομηνία εγγραφής:
+                </label>
+
+                <input
+                    type="date"
+                    id="registerDate"
+                    name="registerDate"
+                    required
+                >
+
+
+                <!-- Password -->
+
+                <label for="password">
+                    Password:
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    minlength="8"
+                    required
+                >
+
+
+                <!-- Password rules -->
+
+                <div id="passwordRules">
+
+                    <p id="ruleLength">
+                        ✘ Τουλάχιστον 8 χαρακτήρες
+                    </p>
+
+                    <p id="ruleLetter">
+                        ✘ Τουλάχιστον ένα γράμμα
+                    </p>
+
+                    <p id="ruleNumber">
+                        ✘ Τουλάχιστον ένας αριθμός
+                    </p>
+
+                    <p id="ruleSymbol">
+                        ✘ Τουλάχιστον ένα σύμβολο !@#$%^&*
+                    </p>
+
+                </div>
+
+
+                <!-- Epibebaiwsh Password -->
+
+                <label for="confirmPassword">
+                    Επιβεβαίωση Password:
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    minlength="8"
+                    required
+                >
+
+                <span
+                    id="confirmPasswordMessage"
+                    class="validation-message">
+                </span>
+
+
+                <!-- Submit -->
+
+                <button type="submit">
+                    Εγγραφή
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        <p>Mini E-Shop</p>
+
+    </footer>
+
+
+    <script src="logic.js"></script>
+
+</body>
+
+</html>
