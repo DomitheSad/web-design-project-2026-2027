@@ -1,0 +1,138 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+nav, footer {
+  background-color: #333;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: block;
+}
+
+nav ul li a {
+  color: #aaa;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+footer {
+  flex-shrink: 0;
+  color: #aaa;
+  padding: 1em;
+}
+
+footer li {
+  display: inline;
+}
+
+#logoNav {
+  margin: 10px auto;
+  float: none;
+}
+
+.page-content {
+  flex: 1 0 auto;
+  padding-bottom: 2rem;
+}
+
+p, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.center {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #005cad;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #003666;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  width: 100%;
+  padding: 20px;
+}
+
+@media screen and (min-width: 768px) {
+
+  nav ul li {
+    display: inline-block;
+  }
+
+  #logoNav {
+    float: left;
+  }
+
+  .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  input[type=submit] {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .column {
+    width: 33.33%;
+  }
+}
